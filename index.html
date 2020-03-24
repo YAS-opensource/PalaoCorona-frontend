@@ -42,6 +42,7 @@
         <link rel="stylesheet" href="css/style.css" />
         <!-- responsive css -->
         <link rel="stylesheet" href="css/responsive.css" />
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <!--[if IE]>
             <script src="js/html5shiv.js"></script>
         <![endif]-->
@@ -202,8 +203,8 @@
                     <div class="col-md-3 col-sm-6 col-xs-12 sm-margin-five-bottom sm-padding-ten-left xs-padding-15px-left xs-margin-30px-bottom wow fadeInDown">
                         <i class="icon-happy icon-medium pull-left text-medium-gray"></i>
                         <div class="pull-left padding-nine-left">
-                            <h5 class="text-extra-dark-gray font-weight-300 margin-three-bottom timer" data-speed="2000" data-to="650">650</h5>
-                            <span class="text-small text-medium-gray text-uppercase display-block">Happy Clients</span>
+                            <h5 class="text-extra-dark-gray font-weight-300 margin-three-bottom timer" id="confirmed" data-speed="2000" data-to=""></h5>
+                            <span class="text-small text-medium-gray text-uppercase display-block">Confirmed Cases</span>
                             <div class="separator-line-horrizontal-medium-light2 bg-deep-pink display-inline-block"></div>
                         </div>
                     </div>
@@ -212,8 +213,8 @@
                     <div class="col-md-3 col-sm-6 col-xs-12 sm-margin-five-bottom sm-padding-ten-left xs-padding-15px-left xs-margin-30px-bottom wow fadeInDown" data-wow-delay="0.2s">
                         <i class="icon-layers icon-medium pull-left text-medium-gray"></i>
                         <div class="pull-left padding-nine-left">
-                            <h5 class="text-extra-dark-gray font-weight-300 margin-three-bottom timer" data-speed="2000" data-to="987">987</h5>
-                            <span class="text-small text-medium-gray text-uppercase display-block">work Completed</span>
+                            <h5 class="text-extra-dark-gray font-weight-300 margin-three-bottom timer" id="recovered" data-speed="2000" data-to="">2000</h5>
+                            <span class="text-small text-medium-gray text-uppercase display-block">Recovered</span>
                             <div class="separator-line-horrizontal-medium-light2 bg-deep-pink display-inline-block"></div>
                         </div>
                     </div>
@@ -222,8 +223,8 @@
                     <div class="col-md-3 col-sm-6 col-xs-12 xs-margin-seven-bottom sm-padding-ten-left xs-padding-15px-left xs-margin-30px-bottom wow fadeInDown" data-wow-delay="0.4s">
                         <i class="icon-global icon-medium pull-left text-medium-gray"></i>
                         <div class="pull-left padding-nine-left">
-                            <h5 class="text-extra-dark-gray font-weight-300 margin-three-bottom timer" data-speed="2000" data-to="350">350</h5>
-                            <span class="text-small text-medium-gray text-uppercase display-block">Award Winning</span>
+                            <h5 class="text-extra-dark-gray font-weight-300 margin-three-bottom timer" id="active" data-speed="2000" data-to="">2000</h5>
+                            <span class="text-small text-medium-gray text-uppercase display-block">Sick</span>
                             <div class="separator-line-horrizontal-medium-light2 bg-deep-pink display-inline-block"></div>
                         </div>
                     </div>
@@ -232,11 +233,12 @@
                     <div class="col-md-3 col-sm-6 col-xs-12 xs-margin-seven-bottom sm-padding-ten-left xs-padding-15px-left xs-no-margin-bottom wow fadeInDown" data-wow-delay="0.6s">
                         <i class="icon-chat icon-medium pull-left text-medium-gray"></i>
                         <div class="pull-left padding-nine-left">
-                            <h5 class="text-extra-dark-gray font-weight-300 margin-three-bottom timer" data-speed="2000" data-to="850">850</h5>
-                            <span class="text-small text-medium-gray text-uppercase display-block">Telephonic Talk</span>
+                            <h5 class="text-extra-dark-gray font-weight-300 margin-three-bottom timer" id="deaths" data-speed="2000" data-to="">2000</h5>
+                            <span class="text-small text-medium-gray text-uppercase display-block">Deaths</span>
                             <div class="separator-line-horrizontal-medium-light2 bg-deep-pink display-inline-block"></div>
                         </div>
                     </div>
+                    <script type="text/javascript" src="js/fetch-data.min.js"></script>
                     <!-- end counter item -->
                 </div>
             </div>
@@ -844,6 +846,8 @@
         <!-- revolution -->
         <script type="text/javascript" src="revolution/js/jquery.themepunch.tools.min.js"></script>
         <script type="text/javascript" src="revolution/js/jquery.themepunch.revolution.min.js"></script>
+        <!-- data fetching -->
+        
         <!-- revolution slider extensions (load below extensions JS files only on local file systems to make the slider work! The following part can be removed on server for on demand loading) -->
         <!--<script type="text/javascript" src="revolution/js/extensions/revolution.extension.actions.min.js"></script>
         <script type="text/javascript" src="revolution/js/extensions/revolution.extension.carousel.min.js"></script>
