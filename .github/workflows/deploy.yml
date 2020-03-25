@@ -1,0 +1,16 @@
+name: Deploy
+on: [push]
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Executing remote ssh command via HOST IP, HOST USERNAME and SSH PRIVATE KEY
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          script: |
+            git clone https://${{ secrets.GITHUB_TOKEN }}@github.com/YAS-opensource/PalaoCorona-frontend.git
+            cp -r PalaoCorona-frontend/* /var/www/palaocorona.xyz
