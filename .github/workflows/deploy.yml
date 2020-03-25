@@ -12,5 +12,8 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
           script: |
-            git clone https://${{ secrets.GITHUB_TOKEN }}@github.com/YAS-opensource/PalaoCorona-frontend.git
+            rm -rf PalaoCorona-frontend/*
+            rm -rf /var/www/palaocorona.xyz/*
+
+            git clone -b master https://${{ secrets.GITHUB_TOKEN }}@github.com/YAS-opensource/PalaoCorona-frontend.git
             cp -r PalaoCorona-frontend/* /var/www/palaocorona.xyz
